@@ -27,5 +27,9 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <div className="container max-w-lg mx-auto text-center h-screen p-4">
+      <RouterProvider router={router} />
+    </div>
+  );
 }

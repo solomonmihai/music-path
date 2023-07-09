@@ -12,6 +12,16 @@ export default function SpotifyRedirect() {
       state.token = token;
     });
 
+    const expiryDate = new Date();
+    expiryDate.setHours(expiryDate.getHours() + 1);
+
+    const authData = {
+      token,
+      expires: expiryDate,
+    };
+
+    localStorage.setItem("auth", JSON.stringify(authData));
+
     navigate("/");
   }, []);
 
